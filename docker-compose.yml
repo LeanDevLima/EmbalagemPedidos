@@ -7,8 +7,9 @@ services:
     depends_on:
       - db
     environment:
+      - ASPNETCORE_ENVIRONMENT=Development
       - ConnectionStrings__DefaultConnection=Server=db;Database=EmbalagemDB;User=sa;Password=YourStrong@Passw0rd;
-
+      
   db:
     image: mcr.microsoft.com/mssql/server:2019-latest
     environment:
