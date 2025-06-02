@@ -1,0 +1,6 @@
+@EmbalagemPedidos_HostAddress = http://localhost:5230
+
+GET {{EmbalagemPedidos_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
