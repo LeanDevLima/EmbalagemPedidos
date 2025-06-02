@@ -40,15 +40,33 @@ cd EmbalagemPedidos
 
 ### Execute com Docker
 
-O projeto está configurado para rodar em containers Docker:
+O projeto está configurado para rodar em containers Docker, dê esses comandos nessa sequência:
 
 ```bash
-docker-compose build
-docker-compose up -d
+docker-compose down -v
+docker-compose up --build
 ```
+#### Com esses comandos você estará:
+ - Limpando containers antigos;
+ - Construindo as imagens e já iniciando os containers.
 
-### Aplique as migrações do banco de dados
+
+### Testar a API
+
+Este projeto inclui um arquivo de exemplo (`entrada.json`) que pode ser utilizado para testar a API. Basta executar o comando abaixo no terminal (com o terminal posicionado na raiz do projeto):
 
 ```bash
-docker-compose exec app dotnet ef database update
+curl -X POST "http://localhost:5000/api/Pedidos/processar-json" \
+-H "Content-Type: application/json" \
+-d "@entrada.json"
 ```
+
+A resposta será exibida diretamente no terminal, no formato JSON.
+
+
+### Conecte-se comigo
+
+Se quiser saber mais sobre este projeto ou trocar ideias sobre desenvolvimento de software, fique à vontade para entrar em contato pelo LinkedIn:
+
+👨🏽‍💻 [Leanderson Lima](https://www.linkedin.com/in/leanderson-dias-de-lima/) 
+
